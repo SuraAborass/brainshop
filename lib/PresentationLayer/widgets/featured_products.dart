@@ -7,14 +7,14 @@ import '../../Constants/font_styles.dart';
 import '../screens/public/one_collection_screen.dart';
 
 
-class Collections extends StatefulWidget {
-  const Collections({Key? key}) : super(key: key);
+class FeaturedProducts extends StatefulWidget {
+  const FeaturedProducts({Key? key}) : super(key: key);
 
   @override
-  State<Collections> createState() => _CollectionsState();
+  State<FeaturedProducts> createState() => _FeaturedProductsState();
 }
 
-class _CollectionsState extends State<Collections> {
+class _FeaturedProductsState extends State<FeaturedProducts> {
   late PageController pageController;
 
   @override
@@ -36,21 +36,18 @@ class _CollectionsState extends State<Collections> {
 
     return Column(
       children: [
-        InkWell(
-          onTap: ()=> Get.to(const OneCollection()),
-          child: Container(
-            height: 140,
-            width: deviceSize.width,
-            decoration: const BoxDecoration(color: AppColors.black),
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              physics: const ClampingScrollPhysics(),
-              controller: pageController,
-              itemCount: appBannerList.length,
-              itemBuilder: (context, index) {
-                return carouselView(index);
-              },
-            ),
+        Container(
+          height: 250,
+          width: deviceSize.width,
+          decoration: const BoxDecoration(color: AppColors.black),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            physics: const ClampingScrollPhysics(),
+            controller: pageController,
+            itemCount: appBannerList.length,
+            itemBuilder: (context, index) {
+              return carouselView(index);
+            },
           ),
         ),
       ],
@@ -59,18 +56,19 @@ class _CollectionsState extends State<Collections> {
 
   Widget carouselView(int index){
     return carouselCard(appBannerList[index]);
+
   }
-   Widget carouselCard(AppBanner data){
+  Widget carouselCard(AppBanner data){
     return Column(
       children: [
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Hero(
-              tag: "collection",
+            child: InkWell(
+              onTap: ()=> Get.to(const OneCollection()),
               child: Container(
                 height: 160,
-                width: 85,
+                width: 200,
                 decoration:  BoxDecoration(
                   image: DecorationImage(image: AssetImage(data.url),fit: BoxFit.cover),
                   borderRadius:  const BorderRadius.all(Radius.circular(20.0)),
@@ -81,9 +79,12 @@ class _CollectionsState extends State<Collections> {
         ),
         Padding(
           padding: const EdgeInsets.all(5.0),
-          child: Text(data.title,style: title4,),
+          child: Text(data.title,style: title5,),
         )
       ],
+
+
     );
-   }
+
+  }
 }

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'Constants/router.dart';
-import 'PresentationLayer/screens/public/splash_screen.dart';
 
 
 
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

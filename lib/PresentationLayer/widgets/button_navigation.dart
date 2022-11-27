@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../main.dart';
+import '../screens/public/notification_screen.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class NavBar extends StatelessWidget {
             Get.toNamed(AppRoutes.homepage);
             break;
           case 1:
-            Get.toNamed(AppRoutes.notifications);
+            Get.to(const Notifications());
             break;
           case 2:
             Get.toNamed(AppRoutes.mybag);

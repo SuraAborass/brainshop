@@ -5,6 +5,7 @@ import '../../../Constants/font_styles.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/button_navigation.dart';
 import '../../widgets/collections.dart';
+import '../../widgets/featured_products.dart';
 import '../../widgets/search_field.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -21,26 +22,25 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           children: [
              const SearchField(),
-            Container(
-              width: double.infinity,
-              decoration: const BoxDecoration(color: AppColors.black),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 15),
-                    child: Row(
-                      children: const [
-                        Text(
-                          "Collections",
-                          style: title3,
-                        ),
-                      ],
-                    ),
-                  ),
-                  //const Collections(),
-                ],
-              ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0, vertical: 10),
+              child: Row(
+                children: const [
+                  Text("Collections", style: title3,),],),),
+            const Padding(
+              padding:  EdgeInsets.all(8.0),
+              child:  Collections(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0, vertical: 15),
+              child: Row(
+                children: const [
+                  Text("Featured Products", style: title3,),],),),
+            const Padding(
+              padding:  EdgeInsets.all(8.0),
+              child:  FeaturedProducts(),
             ),
           ],
         ),
