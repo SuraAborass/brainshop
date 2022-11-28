@@ -1,10 +1,13 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:brainshop/Constants/routes.dart';
+import 'package:brainshop/PresentationLayer/screens/public/my_bag.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../main.dart';
+import '../screens/public/favorites_screen.dart';
 import '../screens/public/notification_screen.dart';
+import '../screens/public/profile_screen.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -25,13 +28,13 @@ class NavBar extends StatelessWidget {
             Get.to(const Notifications());
             break;
           case 2:
-            Get.toNamed(AppRoutes.mybag);
+            Get.to(const MyBag());
             break;
           case 3:
-            Get.toNamed(AppRoutes.favourites);
+            Get.to(const Favorites());
             break;
           case 4:
-            Get.toNamed(AppRoutes.profile);
+            Get.to(const Profile());
             break;
           default:
         }},

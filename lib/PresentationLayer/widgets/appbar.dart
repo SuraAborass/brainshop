@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../Constants/colors.dart';
+import 'package:get/get.dart';
+
+import '../screens/public/my_bag.dart';
 
 PreferredSizeWidget customAppBar(BuildContext context) {
   return AppBar(
@@ -26,7 +29,7 @@ PreferredSizeWidget customAppBar(BuildContext context) {
     centerTitle: true,
     actions: [
       IconButton(
-          onPressed: () {},
+          onPressed: () => Get.to(const MyBag()),
           icon: const Icon(
             Icons.shopping_cart,
             size: 30,

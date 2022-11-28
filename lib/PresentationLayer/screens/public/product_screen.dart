@@ -17,7 +17,7 @@ class Product extends StatelessWidget {
       bottomNavigationBar: const NavBar(),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(expandedHeight: 300,
+          SliverAppBar(expandedHeight: 400,
             pinned: true,
             backgroundColor: AppColors.black,
             actions: [
@@ -32,11 +32,11 @@ class Product extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
                 background: Hero
                   (tag: "product",
-                    child: Image.asset('assets/images/Image 6.png',width: deviceSize.width,))
+                    child: Image.asset('assets/images/Image 6.png',fit: BoxFit.cover,),)
             ), ),
           SliverList(delegate: SliverChildListDelegate([
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(top: 30.0, right: 20.0, left: 20.0),
               child: Row(
                 children:  [
                   const Expanded(
@@ -45,15 +45,15 @@ class Product extends StatelessWidget {
                   Expanded(
                     flex: 1,
                       child: Column(
-                    children: const [
-                      Text("50.000",style: title7,),
-                      Text("    40.000 S.P",style: titleCopy8,),
+                    children: [
+                      Text("50.000",style: title7.copyWith(fontSize: 15)),
+                      const Text("    40.000 S.P",style: titleCopy8,),
                     ],
                   ))
                 ],
               ),
             ),
-            Padding(padding: const EdgeInsets.all(8.0),
+            Padding(padding: const EdgeInsets.only(top: 8.0, right: 20.0, left: 20.0),
             child: Row(
               children: const [
                 Icon(Icons.star, color: AppColors.yellow,),
@@ -63,7 +63,7 @@ class Product extends StatelessWidget {
                 Icon(Icons.star, color: AppColors.yellow,),
               ],
             )),
-            Padding(padding: const EdgeInsets.all(8.0),
+            Padding(padding: const EdgeInsets.only(top: 8.0, right: 20.0, left: 20.0),
                 child: Row(
                   children: const [
                     Padding(
@@ -71,29 +71,101 @@ class Product extends StatelessWidget {
                       child: CircleAvatar(
                         radius: 12,
                         backgroundColor: AppColors.white,
-
                       ),
                     ),
                     CircleAvatar(
                       radius: 12,
                       backgroundColor: AppColors.blue,
-
                     ),
                     Padding(
                       padding: EdgeInsets.all(3.0),
                       child: CircleAvatar(
                         radius: 12,
                         backgroundColor: AppColors.pink,
-
                       ),
                     ),
                     CircleAvatar(
                       radius: 12,
                       backgroundColor: AppColors.black1,
-
                     ),
                   ],
                 )),
+            Padding(padding: const EdgeInsets.only(top: 8.0, right: 20.0, left: 20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Text(" Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+                            style: title.copyWith(fontWeight: FontWeight.normal,fontSize: 16) ,),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+            ),
+            const SizedBox(height: 15,),
+            Container(
+              height: 50,
+              width: deviceSize.width,
+              color: AppColors.lightgrey,
+              child: Row(
+                children: [
+                  Container(height: 50,width: 15, color: AppColors.yellow,),
+                  Expanded(child: Row(children: [
+                    const Text("   Model :  ",style: title,textAlign: TextAlign.start),
+                    Text("SKU : vfgxsh1251ed4",style: title8.copyWith(fontSize: 15,),)
+                  ],))
+                ],
+              ),
+            ),
+            const SizedBox(height: 15,),
+            Container(
+              height: 70,
+              width: deviceSize.width,
+              color: AppColors.lightgrey,
+              child: Row(
+                children: [
+                  Container(height: 70,width: 15, color: AppColors.yellow,),
+                  Expanded(child: Row(children: [
+                    const Text("   Composition :  ",style: title,),
+                    Expanded(child: Text("60% polyester, 25% polyamide, 15% viscose ",style: title8.copyWith(fontSize: 15,),))
+                  ],))
+                ],
+              ),
+            ),
+            const SizedBox(height: 15,),
+            Container(
+              height: 50,
+              width: deviceSize.width,
+              color: AppColors.lightgrey,
+              child: Row(
+                children: [
+                  Container(height: 50,width: 15, color: AppColors.yellow,),
+                  Expanded(child: Row(children: [
+                    const Text("   Sheer :  ",style: title,),
+                    Text("Yes",style: title8.copyWith(fontSize: 15,),)
+                  ],))
+                ],
+              ),
+            ),
+            const SizedBox(height: 15,),
+            Container(
+              height: 50,
+              width: deviceSize.width,
+              color: AppColors.lightgrey,
+              child: Row(
+                children: [
+                  Container(height: 50,width: 15, color: AppColors.yellow,),
+                  Expanded(child: Row(children: [
+                    const Text("   Fit Type :  ",style: title,),
+                    Text("Regular Fit",style: title8.copyWith(fontSize: 15,),)
+                  ],))
+                ],
+              ),
+            )
           ]))
         ],
       ),

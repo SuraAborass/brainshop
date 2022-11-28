@@ -4,7 +4,7 @@ class AppRoutes{
   static const loginPage = "/login";
   static const profile = "/homepage/profile";
   static const notifications = "/homepage/Notifications";
-  static const favourites = "/homepage/favourites";
+  static const favorites = "/homepage/favorites";
   static const mybag = "/homepage/mybag";
 
 

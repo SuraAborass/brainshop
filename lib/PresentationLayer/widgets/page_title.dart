@@ -7,11 +7,10 @@ Widget pageTitle(title) {
     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           title,
-          style: title3,
+          style: titleCopy3,
         ),
       ],
     ),

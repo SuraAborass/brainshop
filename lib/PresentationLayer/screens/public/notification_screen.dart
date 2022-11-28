@@ -95,7 +95,7 @@ class Notifications extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          flex:1,
+                          flex: 1,
                           child: Container(
                             margin: const EdgeInsets.all(10),
                             width: 66,
