@@ -2,8 +2,8 @@ import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Constants/font_styles.dart';
-import '../../widgets/button_navigation.dart';
 import '../../widgets/one_collection_item.dart';
+import 'button_navigation.dart';
 
 class OneCollection extends StatelessWidget {
   const OneCollection({Key? key}) : super(key: key);

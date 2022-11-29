@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
-import '../../widgets/button_navigation.dart';
+import 'button_navigation.dart';
 
 class Product extends StatelessWidget {
   const Product({Key? key}) : super(key: key);

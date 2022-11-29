@@ -1,5 +1,6 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../Constants/font_styles.dart';
 import '../../widgets/appbar.dart';
@@ -31,7 +32,7 @@ class MyBag extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                 children:[
-                      Text("Total :",style: titleCopy7.copyWith(fontSize: 15),),
+                      Text("Total :".tr,style: titleCopy7.copyWith(fontSize: 15),),
                       Text("   1.000.000 S.P",style: title8.copyWith(fontSize: 15))
                 ],
               ),
@@ -39,15 +40,15 @@ class MyBag extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children:[
-                          Text("Discount :    ",style: titleCopy7.copyWith(fontSize: 15),),
-                          Text("200.000 S.P",style: title7.copyWith(fontSize: 15, color: Colors.red))
+                          Text("Discount :    ".tr,style: titleCopy7.copyWith(fontSize: 15),),
+                          Text("20%",style: title7.copyWith(fontSize: 15, color: Colors.red))
                         ],
                       ),
                       const SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children:[
-                          Text("Net Value :    ",style: titleCopy7.copyWith(fontSize: 15),),
+                          Text("Net Value :    ".tr,style: titleCopy7.copyWith(fontSize: 15),),
                           Text("800.000 S.P",style: title8.copyWith(fontSize: 15,))
                         ],
                       ),
@@ -63,7 +64,7 @@ class MyBag extends StatelessWidget {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                           Radius.circular(20.0))),
-                  child: const Text('Check Out', style: titleCopy ),
+                  child: Text('Check Out'.tr, style: titleCopy ),
 
                 ),
               ),
@@ -77,7 +78,7 @@ class MyBag extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              pageTitle("My Bag"),
+              pageTitle("My Bag".tr),
               const MyBagItem(),
               const SizedBox(height: 15,),
               const MyBagItem(),

@@ -1,13 +1,15 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:brainshop/Constants/routes.dart';
 import 'package:brainshop/PresentationLayer/screens/public/my_bag.dart';
+import 'package:brainshop/PresentationLayer/screens/public/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../main.dart';
-import '../screens/public/favorites_screen.dart';
-import '../screens/public/notification_screen.dart';
-import '../screens/public/profile_screen.dart';
+import '../../../main.dart';
+import 'favorites_screen.dart';
+import 'notification_screen.dart';
+
+
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -42,31 +44,31 @@ class NavBar extends StatelessWidget {
       backgroundColor: AppColors.black,
       selectedItemColor: AppColors.yellow,
       unselectedItemColor: Colors.white.withOpacity(.5),
-      items:  const <BottomNavigationBarItem> [
+      items:  <BottomNavigationBarItem> [
         BottomNavigationBarItem(
           backgroundColor: AppColors.lightblack,
-          icon: Icon(Icons.home),
-          label: "Home",
+          icon: const Icon(Icons.home),
+          label: "Home".tr,
         ),
         BottomNavigationBarItem(
           backgroundColor: AppColors.lightblack,
-          icon: Icon(Icons.notifications),
-          label: "Notifications",
+          icon: const Icon(Icons.notifications),
+          label: "Notifications".tr,
         ),
         BottomNavigationBarItem(
           backgroundColor: AppColors.lightblack,
-          icon:  Icon(Icons.shopping_cart),
-          label: "My Bag",
+          icon: const Icon(Icons.shopping_cart),
+          label: "My Bag".tr,
         ),
         BottomNavigationBarItem(
           backgroundColor: AppColors.lightblack,
-          icon: Icon(Icons.favorite),
-          label: "Favourites",
+          icon: const Icon(Icons.favorite),
+          label: "Favourites".tr,
         ),
         BottomNavigationBarItem(
           backgroundColor: AppColors.lightblack,
-          icon: Icon(Icons.person),
-          label: "Profile",
+          icon: const Icon(Icons.person),
+          label: "Profile".tr,
         ),
       ],
     );

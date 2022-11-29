@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'BusinessLayer/bindings/init_bindings.dart';
+import 'Constants/languages.dart';
 import 'Constants/router.dart';
 
 
@@ -20,6 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      translations: Languages(),
+      locale:Get.deviceLocale,
+      fallbackLocale: const Locale.fromSubtags(languageCode: "ar"),
+      initialBinding: InitBinding(),
       getPages: router,
     );
   }
