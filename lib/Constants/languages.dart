@@ -15,7 +15,6 @@ class Languages extends Translations {
       "Don`t Have an Account?" :  "ليس لديك حساب؟",
       " Create One" : "أنشىء حسابك من هنا",
 
-
       /////sign up screen
       "Create Account" : "إنشاء حساب",
       "To Get Full Access" : "لتتمكن من الوصول",
@@ -33,13 +32,10 @@ class Languages extends Translations {
       "My Bag" : "السلة",
       "Profile" : "الملف الشخصي",
 
-
-
       /////profile screen
       "My Profile" : "ملفي الشخصي",
       "Enter Your Address" : "أدخل عنوانك هنا",
       "Update Profile Info" : "تحديث معلوماتك",
-
 
       /////my bag
       "Discount :" : "الحسم",
@@ -47,31 +43,66 @@ class Languages extends Translations {
       "Net Value" : "صافي القيمة",
       "Check Out" : "سحب",
 
-
-      /////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      /////drawer
+      "Dark Theme" : "الوضع الغامق",
+      "Light Theme" : "الوضع الفاتح",
+      "Language" : "اللغة",
+      "Choose Language" : "اختر لغة",
+      "Arabic" : "العربية",
+      "English" : "الانكليزية",
+      "About Us" : "حول",
 
     },
 
 
     'en_US': {
+      /////LoginScreen
+      "Welcome Back !" : "Welcome Back !",
+      "Please Sign In To Your Account" : "Please Sign In To Your Account",
+      "Enter Your Email" : "Enter Your Email",
+      "Enter Your Password" : "Enter Your Password",
+      "Forget Password ?" : "Forget Password ?",
+      "Login" : "Login",
+      "  Continue With Google" : "  Continue With Google",
+      "Don`t Have an Account?" :  "Don`t Have an Account?",
+      " Create One" : " Create One",
+
+      /////sign up screen
+      "Create Account" : "Create Account",
+      "To Get Full Access" : "To Get Full Access",
+      "Enter Your Name" : "Enter Your Name",
+      "Confirm Your Password" : "Confirm Your Password",
+      "Have an Account ?" : "Have an Account ?",
+      " Login" : " Login",
+
+      /////home screen
+      "Collections" : "Collections",
+      "Featured Products" : "Featured Products",
+      "Favorites" : "Favorites",
+      "Notifications" : "Notifications",
+      "Home" : "Home",
+      "My Bag" : "My Bag",
+      "Profile" : "Profile",
+
+      /////profile screen
+      "My Profile" : "My Profile",
+      "Enter Your Address" : "Enter Your Address",
+      "Update Profile Info" : "Update Profile Info",
+
+      /////my bag
+      "Discount :" : "Discount :",
+      "Total :" : "Total :",
+      "Net Value" : "Net Value",
+      "Check Out" : "Check Out",
+
+      /////drawer
+      "Dark Theme" : "Dark Theme",
+      "Light Theme" : "Light Theme",
+      "Language" : "Language",
+      "Choose Language" : "Choose Language",
+      "Arabic" : "Arabic",
+      "English" : "English",
+      "About Us" : "About Us",
 
     }
   };

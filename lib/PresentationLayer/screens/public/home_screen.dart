@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../Constants/font_styles.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/collections.dart';
+import '../../widgets/drawer.dart';
 import '../../widgets/featured_products.dart';
 import '../../widgets/search_field.dart';
 import 'button_navigation.dart';
@@ -21,6 +22,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.black,
         appBar: customAppBar(context),
+        drawer: MyDrawer(),
         bottomNavigationBar: const NavBar(),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -33,8 +35,8 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: [
                     Text("Collections".tr, style: title3,),],),),
-              const Padding(
-                padding:  EdgeInsets.all(8.0),
+               Padding(
+                padding: const EdgeInsets.all(8.0),
                 child:  Collections(),
               ),
               Padding(

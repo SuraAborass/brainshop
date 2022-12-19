@@ -1,4 +1,4 @@
-import 'package:brainshop/PresentationLayer/screens/public/product_screen.dart';
+import 'package:brainshop/PresentationLayer/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,6 +21,7 @@ class Favorites extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.black,
         appBar: customAppBar(context),
+        drawer: MyDrawer(),
         bottomNavigationBar: const NavBar(),
         body: SingleChildScrollView(
           child: Padding(

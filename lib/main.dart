@@ -6,8 +6,6 @@ import 'Constants/languages.dart';
 import 'Constants/router.dart';
 
 
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
 import '../../widgets/appbar.dart';
+import '../../widgets/drawer.dart';
 import '../../widgets/page_title.dart';
 import 'button_navigation.dart';
 
@@ -21,6 +22,7 @@ class Notifications extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.black,
         appBar: customAppBar(context),
+        drawer: MyDrawer(),
         bottomNavigationBar: const NavBar(),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,

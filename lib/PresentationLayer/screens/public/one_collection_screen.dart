@@ -1,6 +1,5 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
-
 import '../../../Constants/font_styles.dart';
 import '../../widgets/one_collection_item.dart';
 import 'button_navigation.dart';
@@ -10,7 +9,6 @@ class OneCollection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.black,
       bottomNavigationBar: const NavBar(),
@@ -32,25 +30,6 @@ class OneCollection extends StatelessWidget {
               background: Hero
                 (tag: "collection",
                   child: Image.asset('assets/images/Image 6.png',fit: BoxFit.cover,)),
-              /*Stack(
-                children: [Hero
-                  (tag: "collection",
-                    child: Image.asset('assets/images/Image 6.png',fit: BoxFit.cover,)),
-                  Container(
-                    height: 300,
-                    width: deviceSize.width,
-                    decoration:  const BoxDecoration(
-                      gradient:  LinearGradient(
-                        colors: [AppColors.grey, AppColors.grey],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: [0.4, 0.7],
-                        tileMode: TileMode.repeated,
-                      ),
-                    ),
-                  )
-              ]
-              )*/
             ), ),
           SliverList(delegate: SliverChildListDelegate([
             Padding(

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../Constants/font_styles.dart';
 import '../../widgets/appbar.dart';
+import '../../widgets/drawer.dart';
 import '../../widgets/mybag_item.dart';
 import '../../widgets/page_title.dart';
 
@@ -17,6 +18,7 @@ class MyBag extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.black,
       appBar: customAppBar(context),
+      drawer: MyDrawer(),
       bottomNavigationBar:  Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

@@ -1,43 +1,21 @@
-import 'package:brainshop/DataAccessLayer/Models/appbanner.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../BusinessLayer/controllers/categories_controller.dart';
 import '../../Constants/colors.dart';
-import '../../Constants/font_styles.dart';
 import '../screens/public/one_collection_screen.dart';
+import 'collection_item.dart';
 
-
-class Collections extends StatefulWidget {
-  const Collections({Key? key}) : super(key: key);
-
-  @override
-  State<Collections> createState() => _CollectionsState();
-}
-
-class _CollectionsState extends State<Collections> {
-  late PageController pageController;
-
-  @override
-  void initState(){
-    super.initState();
-    pageController = PageController(viewportFraction: 0.7);
-  }
-
-  @override
-  void dispose(){
-    super.dispose();
-    pageController.dispose();
-  }
+class Collections extends StatelessWidget {
+  Collections({Key? key}) : super(key: key);
+  final CategoriesController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
-
-    final deviceSize=MediaQuery.of(context).size;
-
+    final deviceSize = MediaQuery.of(context).size;
     return Column(
       children: [
         InkWell(
-          onTap: ()=> Get.to(const OneCollection()),
+          onTap: () => Get.to(const OneCollection()),
           child: Container(
             height: 140,
             width: deviceSize.width,
@@ -45,10 +23,9 @@ class _CollectionsState extends State<Collections> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               physics: const ClampingScrollPhysics(),
-              controller: pageController,
-              itemCount: appBannerList.length,
+              itemCount: _controller.categories.length,
               itemBuilder: (context, index) {
-                return carouselView(index);
+                return CollectionItem(category: _controller.categories[index],);
               },
             ),
           ),
@@ -56,34 +33,4 @@ class _CollectionsState extends State<Collections> {
       ],
     );
   }
-
-  Widget carouselView(int index){
-    return carouselCard(appBannerList[index]);
-  }
-   Widget carouselCard(AppBanner data){
-    return Column(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Hero(
-              tag: "collection",
-              child: Container(
-                height: 160,
-                width: 85,
-                decoration:  BoxDecoration(
-                  image: DecorationImage(image: AssetImage(data.url),fit: BoxFit.cover),
-                  borderRadius:  const BorderRadius.all(Radius.circular(20.0)),
-                ),
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Text(data.title,style: title4,),
-        )
-      ],
-    );
-   }
 }
