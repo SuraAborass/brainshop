@@ -1,8 +1,8 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../Constants/font_styles.dart';
+import '../../../DataAccessLayer/Models/product.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/collections.dart';
 import '../../widgets/drawer.dart';
@@ -11,8 +11,7 @@ import '../../widgets/search_field.dart';
 import 'button_navigation.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
+  const MyHomePage({Key? key,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Directionality(

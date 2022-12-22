@@ -3,8 +3,8 @@ import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
 import 'button_navigation.dart';
 
-class Product extends StatelessWidget {
-  const Product({Key? key}) : super(key: key);
+class ProductScreen extends StatelessWidget {
+  const ProductScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

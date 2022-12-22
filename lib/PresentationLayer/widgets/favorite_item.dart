@@ -24,7 +24,7 @@ class FavoriteItem extends StatelessWidget {
           Expanded(
             flex: 1,
             child: InkWell(
-              onTap: ()=> Get.to(const Product()),
+              onTap: ()=> Get.to(const ProductScreen()),
               child: Container(
                 // margin: const EdgeInsets.all(8.0),
                 decoration: const  BoxDecoration(

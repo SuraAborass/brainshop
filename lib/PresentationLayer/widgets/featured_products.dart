@@ -1,7 +1,6 @@
 import 'package:brainshop/DataAccessLayer/Models/appbanner.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../Constants/colors.dart';
 import '../../Constants/font_styles.dart';
 import '../screens/public/one_collection_screen.dart';
@@ -9,20 +8,16 @@ import '../screens/public/one_collection_screen.dart';
 
 class FeaturedProducts extends StatefulWidget {
   const FeaturedProducts({Key? key}) : super(key: key);
-
   @override
   State<FeaturedProducts> createState() => _FeaturedProductsState();
 }
-
 class _FeaturedProductsState extends State<FeaturedProducts> {
   late PageController pageController;
-
   @override
   void initState(){
     super.initState();
     pageController = PageController(viewportFraction: 0.7);
   }
-
   @override
   void dispose(){
     super.dispose();
@@ -31,9 +26,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
 
   @override
   Widget build(BuildContext context) {
-
     final deviceSize=MediaQuery.of(context).size;
-
     return Column(
       children: [
         Container(
@@ -53,10 +46,8 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
       ],
     );
   }
-
   Widget carouselView(int index){
     return carouselCard(appBannerList[index]);
-
   }
   Widget carouselCard(AppBanner data){
     return Column(
@@ -65,7 +56,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-              onTap: ()=> Get.to(const OneCollection()),
+              onTap: (){},
               child: Container(
                 height: 160,
                 width: 200,
@@ -82,9 +73,6 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
           child: Text(data.title,style: title5,),
         )
       ],
-
-
     );
-
   }
 }

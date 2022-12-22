@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../Constants/colors.dart';
 import '../../Constants/font_styles.dart';
 import '../screens/public/product_screen.dart';
 
 class OneCollectionItem extends StatelessWidget {
-  const OneCollectionItem({Key? key}) : super(key: key);
-
+  const OneCollectionItem({Key? key,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
@@ -23,11 +21,11 @@ class OneCollectionItem extends StatelessWidget {
             Expanded(
               flex: 2,
               child: InkWell(
-                onTap: ()=> Get.to(const Product()),
+                onTap: ()=> Get.to(const ProductScreen()),
                 child: Container(
-                  // margin: const EdgeInsets.all(8.0),
-                  decoration: const  BoxDecoration(
-                      image: DecorationImage(image: AssetImage('assets/images/Image 6.png'),fit: BoxFit.cover),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(image: AssetImage('assets/images/Image 6.png'),
+                          fit: BoxFit.cover),
                       color: AppColors.white,
                       borderRadius: BorderRadius.all(Radius.circular(10.0))),
                   height: 90,

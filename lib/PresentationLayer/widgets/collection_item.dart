@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../BusinessLayer/controllers/product_controller.dart';
 import '../../Constants/font_styles.dart';
 import '../../DataAccessLayer/Models/category.dart';
-import '../screens/public/one_collection_screen.dart';
+
 
 class CollectionItem extends StatelessWidget {
-   const CollectionItem({Key? key,required this.category}) : super(key: key);
+    CollectionItem({Key? key,required this.category}) : super(key: key);
    final Category category;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,8 +16,8 @@ class CollectionItem extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: InkWell(
-              onTap: () => Get.to(const OneCollection()),
+            child: Hero(
+              tag: "category",
               child: Container(
                 height: 160,
                 width: 85,

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../BusinessLayer/controllers/categories_controller.dart';
 import '../../Constants/colors.dart';
+import '../../DataAccessLayer/Models/product.dart';
 import '../screens/public/one_collection_screen.dart';
 import 'collection_item.dart';
 
 class Collections extends StatelessWidget {
-  Collections({Key? key}) : super(key: key);
+  Collections({Key? key,}) : super(key: key);
   final CategoriesController _controller = Get.find();
 
   @override
@@ -15,7 +16,7 @@ class Collections extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: () => Get.to(const OneCollection()),
+          onTap: () {},
           child: Container(
             height: 140,
             width: deviceSize.width,

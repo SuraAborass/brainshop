@@ -1,6 +1,6 @@
 
 class AppBanner{
-   late final int id;
+  late final int id;
   late final String title;
   late final String url;
 
