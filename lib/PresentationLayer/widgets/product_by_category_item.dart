@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../BusinessLayer/controllers/product_controller.dart';
 import '../../Constants/colors.dart';
 import '../../Constants/font_styles.dart';
+import '../../DataAccessLayer/Models/product.dart';
 import '../screens/public/product_screen.dart';
 
-class OneCollectionItem extends StatelessWidget {
-  const OneCollectionItem({Key? key,}) : super(key: key);
+class ProductByCategoryItem extends StatelessWidget {
+  ProductByCategoryItem({Key? key,required this.product}) : super(key: key);
+  final Product product;
+  final ProductController productController = Get.find();
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
@@ -23,11 +27,11 @@ class OneCollectionItem extends StatelessWidget {
               child: InkWell(
                 onTap: ()=> Get.to(const ProductScreen()),
                 child: Container(
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(image: AssetImage('assets/images/Image 6.png'),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: NetworkImage(productController.product.images),
                           fit: BoxFit.cover),
                       color: AppColors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                      borderRadius: const BorderRadius.all(Radius.circular(10.0))),
                   height: 90,
                   width: 90 ,
                 ),
@@ -36,12 +40,12 @@ class OneCollectionItem extends StatelessWidget {
             Expanded(
               flex: 3,
               child: ListTile(
-                title: const Text("Flounce Sleeve V Neck Puff Sleeve Blouse",style: title5,textAlign: TextAlign.start),
+                title:  Text(product.description,style: title5,textAlign: TextAlign.start),
                 subtitle: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Text("50.000",style: title7),
-                    Text("    40.000",style: title8),
+                  children: [
+                    Text(product.price,style: title7),
+                    Text(product.offer,style: title8),
                   ],
                 ),
               ),

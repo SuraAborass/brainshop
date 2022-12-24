@@ -1,14 +1,17 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../BusinessLayer/controllers/product_controller.dart';
 import '../../../Constants/font_styles.dart';
-import '../../../DataAccessLayer/Models/product.dart';
-import '../../widgets/one_collection_item.dart';
+import '../../../DataAccessLayer/Models/category.dart';
+import '../../widgets/product_by_category_item.dart';
+import 'package:get/get.dart';
 import 'button_navigation.dart';
 
 class OneCollection extends StatelessWidget {
-  const OneCollection({Key? key,required this.product,}) : super(key: key);
-  final Product product;
-
+ OneCollection({Key? key,required this.category}) : super(key: key);
+   //final ProductController productController = Get.put(ProductController(Get.arguments[0]));
+   final Category category;
+   final ProductController productController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +19,7 @@ class OneCollection extends StatelessWidget {
       bottomNavigationBar: const NavBar(),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(expandedHeight: 300,
+          SliverAppBar(expandedHeight: 400,
             pinned: true,
             backgroundColor: AppColors.black,
            actions: [
@@ -35,11 +38,10 @@ class OneCollection extends StatelessWidget {
                   Hero(
                     tag: "category",
                     child: Container(
-                      height: 300,
+                      height: 400,
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: NetworkImage(product.category.image
-                              ),
+                              image: NetworkImage(category.image),
                               fit: BoxFit.cover),
                           borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(20),
@@ -54,22 +56,21 @@ class OneCollection extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Row(
                 children:[
-                  Text(product.category.name,style: title3),
+                  Text(category.name,style: title3),
                 ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(right:10,left:10,top: 10),
-              child: Column(
-                children:const [
-                   OneCollectionItem(),
-                   SizedBox(height: 15,),
-                   OneCollectionItem(),
-                   SizedBox(height: 15,),
-                   OneCollectionItem(),
-                   SizedBox( height: 15,),
-                   OneCollectionItem(),
-                ]
+              child: SizedBox(
+                height: Get.height - 400,
+                child: ListView.builder(
+                  itemCount: productController.products.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ProductByCategoryItem(
+                        product: productController.products[index]);
+                  },
+                ),
               ),
             )
           ],),),

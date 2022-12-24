@@ -3,7 +3,7 @@ import '../../Constants/links.dart';
 
 class CategoriesClient {
   Future<dynamic> getCategories() async {
-    var response = await http.get(Uri.parse(baseLink + "categories"));
+    var response = await http.get(Uri.parse(baseLink +"categories"));
 
     print(response.body);
     if (response.statusCode == 200) {

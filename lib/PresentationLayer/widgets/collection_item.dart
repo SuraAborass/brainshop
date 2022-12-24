@@ -1,12 +1,14 @@
+import 'package:brainshop/Constants/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../BusinessLayer/controllers/product_controller.dart';
 import '../../Constants/font_styles.dart';
 import '../../DataAccessLayer/Models/category.dart';
+import 'package:get/get.dart';
+import '../../DataAccessLayer/Models/product.dart';
+import '../screens/public/one_collection_screen.dart';
 
 
 class CollectionItem extends StatelessWidget {
-    CollectionItem({Key? key,required this.category}) : super(key: key);
+   const CollectionItem({Key? key,required this.category,}) : super(key: key);
    final Category category;
 
   @override
@@ -16,8 +18,8 @@ class CollectionItem extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Hero(
-              tag: "category",
+            child: InkWell(
+              onTap: ()=> Get.to(()=>OneCollection(category: category,)),
               child: Container(
                 height: 160,
                 width: 85,
@@ -32,7 +34,7 @@ class CollectionItem extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Text(category.name,style: title8,),
-        )
+        ),
       ],
     );
   }

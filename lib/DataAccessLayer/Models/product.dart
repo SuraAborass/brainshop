@@ -11,6 +11,7 @@ class Product {
   final String offer;
   final String description;
   final String brand;
+  final String images;
   final Category category;
   final List<ProductColor>? colors;
   Product({
@@ -20,6 +21,7 @@ class Product {
     required this.offer,
     required this.description,
     required this.brand,
+    required this.images,
     required this.category,
     this.colors,
   });
@@ -32,6 +34,7 @@ class Product {
       'offer' : offer,
       'description': description,
       'brand' : brand,
+      'images' : images,
       'category' : category,
       'colors' : colors,
     };
@@ -45,6 +48,7 @@ class Product {
       offer: map['offer'] as String,
       description: map['description'] as String,
       brand: map['brand'] as String,
+      images: map['images'] as String,
       category: Category.fromMap(map['category']),
       colors:
       map['colors'] != null ? colorsfromJson(jsonEncode(map['colors'])) : null,
