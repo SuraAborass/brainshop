@@ -11,6 +11,6 @@ class InitBinding extends Bindings {
     Get.put<LanguageController>(LanguageController());
     Get.put<ThemeController>(ThemeController());
     Get.put<CategoriesController>(CategoriesController());
-    Get.put<ProductController>(ProductController());
+    //Get.put<ProductController>(ProductController());
   }
 }

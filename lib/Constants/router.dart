@@ -24,10 +24,11 @@ List<GetPage<dynamic>> router = [
       page: () =>  const MyHomePage(),
       binding: InitBinding()
   ),
- /* GetPage(
+  GetPage(
       name: AppRoutes.collection,
-      page: () =>   OneCollection(),
+      page: () {  OneCollection oneCollection = Get.arguments;
+        return oneCollection;},
       binding: InitBinding()
-  ),*/
+  ),
 
 ];

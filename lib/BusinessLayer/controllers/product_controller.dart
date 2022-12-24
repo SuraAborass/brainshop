@@ -8,9 +8,9 @@ class ProductController extends GetxController {
   final CategoriesController categoriesController = Get.find();
   ProductsRepo repo = ProductsRepo();
   late Product product;
-  //ProductController(this.product);
+  //ProductController(this.category);
   List<Product> products = [];
-  late Category? category;
+  late final Category category;
 
   var loading = false.obs;
 
@@ -22,7 +22,7 @@ class ProductController extends GetxController {
 
   Future<void> getProducts() async {
     loading.value = true;
-    products = await repo.products(category!.id);
+    products = await repo.products(category.id);
     update();
     loading.value = false;
   }

@@ -19,7 +19,8 @@ class CollectionItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-              onTap: ()=> Get.to(()=>OneCollection(category: category,)),
+              onTap: (){ Get.toNamed(AppRoutes.collection);
+              },
               child: Container(
                 height: 160,
                 width: 85,

@@ -8,10 +8,10 @@ import 'package:get/get.dart';
 import 'button_navigation.dart';
 
 class OneCollection extends StatelessWidget {
- OneCollection({Key? key,required this.category}) : super(key: key);
-   //final ProductController productController = Get.put(ProductController(Get.arguments[0]));
+ OneCollection({Key? key,required this.category,}) : super(key: key);
+   final ProductController productController = Get.put(ProductController());
    final Category category;
-   final ProductController productController = Get.find();
+   //final ProductController productController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +53,7 @@ class OneCollection extends StatelessWidget {
             ), ),
           SliverList(delegate: SliverChildListDelegate([
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 children:[
                   Text(category.name,style: title3),

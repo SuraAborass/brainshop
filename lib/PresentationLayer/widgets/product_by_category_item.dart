@@ -10,6 +10,7 @@ class ProductByCategoryItem extends StatelessWidget {
   ProductByCategoryItem({Key? key,required this.product}) : super(key: key);
   final Product product;
   final ProductController productController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;

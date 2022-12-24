@@ -9,7 +9,7 @@ class Collections extends StatelessWidget {
   Collections({Key? key,}) : super(key: key);
   final CategoriesController _controller = Get.find();
   //final ProductController productController = Get.find();
-  //final ProductController productController = Get.put(ProductController(Get.arguments[0]));
+
 
 
   @override
