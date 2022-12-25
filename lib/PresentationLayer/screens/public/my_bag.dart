@@ -17,7 +17,7 @@ class MyBag extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.black,
-      appBar: customAppBar(context),
+      appBar: myAppBar(context),
       drawer: MyDrawer(),
       bottomNavigationBar:  Padding(
         padding: const EdgeInsets.all(8.0),

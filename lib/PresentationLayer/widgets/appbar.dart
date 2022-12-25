@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../screens/public/my_bag.dart';
 
-PreferredSizeWidget customAppBar(BuildContext context) {
+PreferredSizeWidget myAppBar(BuildContext context) {
   return AppBar(
     backgroundColor: AppColors.black,
     elevation: 0,
@@ -20,8 +20,7 @@ PreferredSizeWidget customAppBar(BuildContext context) {
             color: AppColors.yellow,
           ));
     }),
-    title: Image.asset(
-      'assets/images/logo.png',
+    title: Image.asset('assets/images/logo.png',
       height: 32,
       width: 74,
       alignment: Alignment.topLeft,

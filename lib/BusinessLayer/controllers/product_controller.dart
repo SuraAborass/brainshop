@@ -7,11 +7,10 @@ import 'categories_controller.dart';
 class ProductController extends GetxController {
   final CategoriesController categoriesController = Get.find();
   ProductsRepo repo = ProductsRepo();
-  late Product product;
-  //ProductController(this.category);
+  Product? product;
   List<Product> products = [];
-  late final Category category;
-
+ final Category category;
+  ProductController(this.category);
   var loading = false.obs;
 
   @override

@@ -1,17 +1,16 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../BusinessLayer/controllers/categories_controller.dart';
 import '../../../BusinessLayer/controllers/product_controller.dart';
 import '../../../Constants/font_styles.dart';
-import '../../../DataAccessLayer/Models/category.dart';
 import '../../widgets/product_by_category_item.dart';
 import 'package:get/get.dart';
 import 'button_navigation.dart';
 
 class OneCollection extends StatelessWidget {
- OneCollection({Key? key,required this.category,}) : super(key: key);
-   final ProductController productController = Get.put(ProductController());
-   final Category category;
-   //final ProductController productController = Get.find();
+ OneCollection({Key? key,}) : super(key: key);
+   final ProductController productController = Get.put(ProductController(Get.arguments[0]));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +36,11 @@ class OneCollection extends StatelessWidget {
                 children: [
                   Hero(
                     tag: "category",
-                    child: Container(
+                    child:  Container(
                       height: 400,
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: NetworkImage(category.image),
+                              image: NetworkImage(productController.category.image),
                               fit: BoxFit.cover),
                           borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(20),
@@ -54,9 +53,9 @@ class OneCollection extends StatelessWidget {
           SliverList(delegate: SliverChildListDelegate([
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Row(
+              child:  Row(
                 children:[
-                  Text(category.name,style: title3),
+                  Text(productController.category.name,style: title3),
                 ],
               ),
             ),

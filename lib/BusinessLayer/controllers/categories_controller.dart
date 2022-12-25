@@ -5,8 +5,7 @@ import '../../DataAccessLayer/Repositories/category_repo.dart';
 class CategoriesController extends GetxController{
   CategoriesRepo repo = CategoriesRepo();
   List<Category> categories = [];
-  late Category category;
-   //CategoriesController (this.category);
+  Category? category;
   var loading = false.obs;
 
   @override

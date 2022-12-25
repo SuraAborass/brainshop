@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../../BusinessLayer/controllers/notification_controller.dart';
 import '../../../Constants/colors.dart';
-import '../../../Constants/font_styles.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/drawer.dart';
+import '../../widgets/notification_item.dart';
 import '../../widgets/page_title.dart';
 import 'button_navigation.dart';
 
 class Notifications extends StatelessWidget {
-  const Notifications({Key? key}) : super(key: key);
+   Notifications({Key? key}) : super(key: key);
+  final BackNotificationController backNotificationController = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    final deviceSize = MediaQuery.of(context).size;
-
     return Directionality(
       textDirection: Get.locale!.languageCode == "ar"
           ? TextDirection.rtl
           : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: AppColors.black,
-        appBar: customAppBar(context),
+        appBar: myAppBar(context),
         drawer: MyDrawer(),
         bottomNavigationBar: const NavBar(),
         body: SingleChildScrollView(
@@ -34,103 +33,22 @@ class Notifications extends StatelessWidget {
                 child: pageTitle("Notifications".tr),
               ),
               Padding(padding: const EdgeInsets.only(top: 10, bottom: 10,),
-              child: Column(
-                children: [
-                  Container(
-                    width: deviceSize.width,
-                    height: 79,
-                    decoration: const BoxDecoration(color: AppColors.lightgrey,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex:1,
-                          child: Container(
-                            margin: const EdgeInsets.all(10),
-                            width: 66,
-                            height: 64,
-                            decoration: const BoxDecoration(color: AppColors.lightblack,
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                            child: const Center(child:Text("#50",style: title5,)),
-                          ),
-                        ),
-                        const Expanded(
-                            flex: 3,
-                            child: ListTile(
-                              title: Text("Order Statue",style: title6,),
-                              subtitle: Text("Order id : 50 is Under Review",style: title7,),
-                            )),
-
-                      ],
-                    )
-                  ),
-                  const SizedBox(height: 8.0,),
-                  Container(
-                    width: deviceSize.width,
-                    height: 79,
-                    decoration: const BoxDecoration(color: AppColors.lightgrey,
-                    ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex:1,
-                            child: Container(
-                              margin: const EdgeInsets.all(10),
-                              width: 66,
-                              height: 64,
-                              decoration: const BoxDecoration(color: AppColors.lightblack,
-                                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                              child: const Center(child: Icon(Icons.warning,color: AppColors.yellow,)),
-                            ),
-                          ),
-                          const Expanded(
-                              flex: 3,
-                              child: ListTile(
-                                title: Text("Order Statue",style: title6,),
-                                subtitle: Text("Order id : 50 is Under Review", style: title7),
-                              )),
-
-                        ],
-                      )
-                  ),
-                  const SizedBox(height: 8.0,),
-                  Container(
-                    width: deviceSize.width,
-                    height: 79,
-                    decoration: const BoxDecoration(color: AppColors.lightgrey,
-                    ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              margin: const EdgeInsets.all(10),
-                              width: 66,
-                              height: 64,
-                              decoration: const BoxDecoration(color: AppColors.lightblack,
-                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                image: DecorationImage(image: AssetImage('assets/images/Image 6.png'),fit: BoxFit.cover),),
-
-                            ),
-                          ),
-                          const Expanded(
-                              flex: 3,
-                              child: ListTile(
-                                title: Text("50% Discount For Jackets",style: title6,),
-                                subtitle: Text("Check New Offer For You", style: title7),
-                              )),
-
-                        ],
-                      )
-                  ),
-                ],
-              ),)
-
-            ],
-
-          ),
+              child: SizedBox(
+                height: Get.height - 300,
+                child: ListView.builder(
+                  itemCount: backNotificationController.userNotifications.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return NotificationItem(
+                      notification:
+                      backNotificationController.userNotifications[index],
+                    );
+                  },
+                ),
+              ),
         ),
-      ),
+        ]
+    ),
+    ))
     );
   }
 }

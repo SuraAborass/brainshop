@@ -1,9 +1,9 @@
 import 'package:http/http.dart' as http;
 import '../../Constants/links.dart';
 
-class CategoriesClient {
-  Future<dynamic> getCategories() async {
-    var response = await http.get(Uri.parse(baseLink + "categories"));
+class NotificationClient{
+  Future<dynamic> getNotifications() async {
+    var response = await http.get(Uri.parse(baseLink+ "notifications"));
     print(response.body);
     if (response.statusCode == 200) {
       return response.body;

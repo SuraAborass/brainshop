@@ -20,7 +20,7 @@ class Profile extends StatelessWidget {
           : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: AppColors.black,
-        appBar: customAppBar(context),
+        appBar: myAppBar(context),
         drawer: MyDrawer(),
         body: SingleChildScrollView(
           child: Padding(

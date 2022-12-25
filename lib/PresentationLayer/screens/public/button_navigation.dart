@@ -27,7 +27,7 @@ class NavBar extends StatelessWidget {
             Get.toNamed(AppRoutes.homepage);
             break;
           case 1:
-            Get.to(const Notifications());
+            Get.toNamed(AppRoutes.notifications);
             break;
           case 2:
             Get.to(const MyBag());

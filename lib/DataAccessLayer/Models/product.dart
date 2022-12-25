@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'package:brainshop/DataAccessLayer/Models/category.dart';
-
 import 'color.dart';
 
 
@@ -11,8 +9,9 @@ class Product {
   final String offer;
   final String description;
   final String brand;
-  final String images;
-  final Category category;
+  final List<String> images;
+  final String category;
+  //final Category category;
   final List<ProductColor>? colors;
   Product({
     required this.id,
@@ -44,18 +43,27 @@ class Product {
     return Product(
       id: map['id'] as int,
       name: map['name'] as String,
-      price: map['price'] as String,
-      offer: map['offer'] as String,
+      price: map['price'].toString(),
+      offer: map['offer'].toString(),
       description: map['description'] as String,
       brand: map['brand'] as String,
-      images: map['images'] as String,
-      category: Category.fromMap(map['category']),
-      colors:
-      map['colors'] != null ? colorsfromJson(jsonEncode(map['colors'])) : null,
+      images: getImages(map['images']) ,
+      //category: Category.fromMap(map['category']),
+      category: map['category'] as String,
+      colors: null,
+      //map['colors'] !=null ? colorsfromJson(map['colors'].toString()) : ,
     );
   }
+
+  static List<String> getImages(List<dynamic> ls){
+    List<String> result =[] ;
+    for(int i=0;i<ls.length;i++){
+      result.add(ls[i].toString());
+    }
+    return result;
+  }
   static List<ProductColor> colorsfromJson(String json) {
-    final parsed = jsonDecode(json).cast<Map<String, dynamic>>();
+    final parsed = jsonDecode(jsonEncode(json)).cast<Map<String, dynamic>>();
     return parsed.map<ProductColor>((json) => ProductColor.fromMap(json)).toList();
   }
 
