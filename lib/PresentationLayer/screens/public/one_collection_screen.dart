@@ -61,15 +61,20 @@ class OneCollection extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(right:10,left:10,top: 10),
-              child: SizedBox(
-                height: Get.height - 400,
-                child: ListView.builder(
-                  itemCount: productController.products.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ProductByCategoryItem(
-                        product: productController.products[index]);
-                  },
-                ),
+              child: GetBuilder(
+                init: productController,
+                builder: (context) {
+                  return SizedBox(
+                    height: Get.height - 400,
+                    child: ListView.builder(
+                      itemCount: productController.products.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ProductByCategoryItem(
+                            product: productController.products[index]);
+                      },
+                    ),
+                  );
+                }
               ),
             )
           ],),),

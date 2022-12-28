@@ -3,7 +3,6 @@ import 'package:brainshop/Constants/routes.dart';
 import 'package:brainshop/PresentationLayer/screens/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../Constants/font_styles.dart';
 
 class LoginScreen extends StatefulWidget {

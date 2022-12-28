@@ -2,19 +2,16 @@ import 'dart:async';
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../auth/login_screen.dart';
-
+import '../../../BusinessLayer/controllers/splash_controller.dart';
 
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
-
-  final timer = Timer(
+final SplashController splashController = Get.put(SplashController());
+  /*final timer = Timer(
       const Duration(seconds: 3),
           ()=> Get.to(const LoginScreen())
-  );
-
+  );*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(

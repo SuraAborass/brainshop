@@ -15,6 +15,11 @@ class AppColors{
   static const black1 = Color(0xFF444444);
 
 
+  static const success = Color.fromARGB(255, 99, 184, 91);
+  static const warning = Color.fromARGB(255, 233, 196, 73);
+  static const error = Color.fromARGB(255, 226, 102, 102);
+
+
 
 
 

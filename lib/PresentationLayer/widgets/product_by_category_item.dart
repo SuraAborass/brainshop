@@ -13,10 +13,7 @@ class ProductByCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
-    return GetBuilder(
-      init: productController,
-      builder: (context) {
-        return Container(
+    return Container(
           margin: const EdgeInsets.all(8.0),
             decoration: const BoxDecoration(color: AppColors.lightblack,
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
@@ -82,7 +79,5 @@ class ProductByCategoryItem extends StatelessWidget {
                             backgroundColor: AppColors.black1,
                           ),],),))],),
         );
-      }
-    );
   }
 }
