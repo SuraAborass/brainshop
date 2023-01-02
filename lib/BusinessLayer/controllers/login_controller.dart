@@ -24,10 +24,11 @@ class LoginController extends GetxController {
     User? user = await repo.login(
         emailTextController.value.text, passwordTextController.value.text);
     if (user != null) {
+      print(user);
       await userController.saveAuthState(user);
       SnackBars.showSuccess("Welcome....");
     } else {
-      SnackBars.showError("يرجى التأكد من البيانات المدخلة");
+      SnackBars.showError("يرجى إدخال بياناتك بشكل صحيح");
     }
     sending.value = false;
   }

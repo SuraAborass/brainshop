@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../BusinessLayer/controllers/categories_controller.dart';
-import '../../BusinessLayer/controllers/product_controller.dart';
 import '../../Constants/colors.dart';
 import 'collection_item.dart';
 

@@ -44,8 +44,8 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: [
                     Text("Featured Products".tr, style: title3,),],),),
-              const Padding(
-                padding:  EdgeInsets.all(8.0),
+               Padding(
+                padding:  const EdgeInsets.all(8.0),
                 child:  FeaturedProducts(),
               ),
             ],

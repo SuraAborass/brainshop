@@ -1,6 +1,5 @@
 import 'package:brainshop/Constants/colors.dart';
 import 'package:flutter/material.dart';
-import '../../../BusinessLayer/controllers/categories_controller.dart';
 import '../../../BusinessLayer/controllers/product_controller.dart';
 import '../../../Constants/font_styles.dart';
 import '../../widgets/product_by_category_item.dart';

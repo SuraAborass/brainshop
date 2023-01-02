@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
-import 'button_navigation.dart';
+
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({Key? key}) : super(key: key);
@@ -13,7 +13,20 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.black,
-      bottomNavigationBar: const NavBar(),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: MaterialButton(
+          onPressed:(){},
+          height: 56,
+          minWidth: deviceSize.width,
+          color: AppColors.yellow ,
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                  Radius.circular(20.0))),
+          child: const Text('Add to cart', style: titleCopy ),
+
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(expandedHeight: 400,

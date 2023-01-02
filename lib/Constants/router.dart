@@ -17,7 +17,7 @@ List<GetPage<dynamic>> router = [
 
   GetPage(
       name: AppRoutes.loginPage,
-      page: () => const LoginScreen(),
+      page: () =>  LoginScreen(),
       binding: InitBinding()
   ),
 

@@ -13,7 +13,6 @@ class UserController extends GetxController {
   void onInit() async {
     super.onInit();
     authed = await boxClient.getAuthState();
-
     if (authed) {
       user = await boxClient.getAuthedUser();
       print(user!.toMap());
